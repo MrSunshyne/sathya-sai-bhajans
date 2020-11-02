@@ -1,34 +1,37 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import bhajans from "./bhajans.js";
-import searchPlugin from "vuex-search";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
     bhajans: bhajans,
+    searchResults: [],
+    options: null,
   },
   getters: {
     all(state) {
       return state.bhajans;
     },
+    results(state) {
+      return state.searchResults;
+    },
   },
-  mutations: {},
+  actions: {
+    search({ state, commit }, term) {
+      this.$search(term, this.bhajans, state.options).then((results) => {
+        state.searchResults = results;
+      });
+
+      let result = [];
+      commit("updateResults", result);
+    },
+  },
+  mutations: {
+    updateResults(state, payload) {
+      state.searchResults = payload;
+    },
+  },
   modules: {},
-  plugins: [
-    searchPlugin({
-      resources: {
-        bhajans: {
-          // what fields to index
-          index: ["content"],
-          // access the state to be watched by Vuex Search
-          getter: (state) => state.bhajans,
-          // how resource should be watched
-          watch: { delay: 500 },
-        },
-        // otherResource: { index, getter, watch, searchApi },
-      },
-    }),
-  ],
 });

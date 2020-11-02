@@ -604,8 +604,6 @@ const bhajans = [
 
   { id: "380", content: ["Sathya Sāi Smaranam Smaranam", "Parthi Sāi Smaranam", "Tribhuvana Pālaka Sāi Maheshā", "Sathya Sāi Smaranam", "Shri Guru Charanam Sab Dukha Haranam", "Sathya Sāi Smaranam Smaranam", "Sathya Sāi Smaranam"] },
 
-  { id: "375", content: ["Satya Gurudeva Rāh Dikhāo Prabhu", "Rāh Dikhāo Sāi Devā", "* Tum Ho Meré Prān Dātā", "Tum Ho Meré Bhāgya Dātā (x2)"] },
-
   { id: "381", content: ["Satyam Gyānam Anantam Brahmā (x3)", "Satyam Brahmā", "Gyānam Brahmā", "Anantam Brahmā"] },
 
   { id: "382", content: ["Shāntākāram Sāi Devam", "Sākshātkāram Parabrahmam", "Prashānti Nilayam Parama Pāvanam", "Devādi Devam Gurudevam"] },
