@@ -1,17 +1,14 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import bhajans from "./bhajans.js";
 import searchPlugin from "vuex-search";
-
+import state from "./state";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    bhajans: bhajans,
-  },
+  state,
   getters: {
     all(state) {
-      return state.bhajans;
+      return state.myResources.bhajans;
     },
   },
   mutations: {},
@@ -23,7 +20,7 @@ export default new Vuex.Store({
           // what fields to index
           index: ["content"],
           // access the state to be watched by Vuex Search
-          getter: (state) => state.bhajans,
+          getter: (state) => state.myResources.bhajans,
           // how resource should be watched
           watch: { delay: 500 },
         },
